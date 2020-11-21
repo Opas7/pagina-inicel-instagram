@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>inatagram</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+   $(document).ready(function() {
+    let itemInicial = 0,
+        maximoSlide = 3;
+
+    setInterval(function() {
+      itemInicial++;
+
+      $('.carousel-item').each(function() {
+        if ($(this).data('item-id') == itemInicial-1) {
+          $(this).fadeOut(100, function() {
+            $('.carousel-item').each(function() {
+              if ($(this).data('item-id') == itemInicial) {
+                $(this).fadeIn();
+              }
+            });
+          });
+        }
+      });
+
+      if (itemInicial > maximoSlide) {
+        itemInicial = 0;
+      }
+    }, 3000);
+   });
+  </script>
+</head>
+<body>
+<div id="wrapper">
+  <div id="container">
+    <div class="column left">
+      <div class="carousel">
+          <a class="carousel-item" data-item-id="0" href="#one!"><img src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/aafd8c6b005d.jpg"></a>
+          <a class="carousel-item" data-item-id="1" href='#two!' ><img src="https://www.instagram.com/static/images/homepage/screenshot2.jpg/2d9d7248af43.jpg"></a>
+          <a class="carousel-item" data-item-id="2" href='#three!' ><img src="https://www.instagram.com/static/images/homepage/screenshot4.jpg/001bc33056c1.jpg"></a>
+          <a class="carousel-item" data-item-id="3" href='#four!' ><img src="https://www.instagram.com/static/images/homepage/screenshot5.jpg/f5ae123ab1e2.jpg"></a>
+      </div>
+    </div>
+    <div class="column right">
+      <div class="login-panel">
+        <div class="logo">
+          <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png">
+        </div>
+        <div class="avatar">
+            <div class="avatar">
+          <img src="./img/profile-photo.png" alt="foto-de-perfil">
+      </div>
+        </div>
+        <button class="btn-primary">Entre como laravalete</button>
+        <br>
+        <a href="#">Remover conta</a> 
+      </div>
+      <br>
+      <div class="login-panel">
+        <div class="switch">
+          Não é laravalete?<br><a href="#">Alternar contas</a> ou <a href="#">Inscreva-se</a>
+        </div>
+      </div>
+      <div class="get-app-panel"><div id="container1" class="container1">
+         <h1>Baixe o app </h1>
+                      <div class="app-buttons">
+          <a href="#"><img class="app-store" src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/4b70f6fae447.png"></a>
+          <a href="#"><img class="google-play" src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/f06b908907d5.png"></a>
+        </span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <a href="#">Sobre</a>
+      <a href="#">Blog</a>
+      <a href="#">Beleza</a>
+      <a href="#">Carreiras</a>
+      <a href="#">Dança e apresentação</a>
+      <a href="#">Ajuda</a>
+      <br>
+      <a href="#">API</a>
+      <a href="#">Publicidade</a>
+      <a href="#">Fitness</a>
+      <a href="#">Termos</a>
+      <a href="#">Contas mais relevantes</a>
+      <a href="#">Hashtags</a>
+      <a href="#">Artes visuais</a>
+      <a href="#">Language</a>
+      <a href="#">Localização</a>
+      <br>
+      <center>
+      <div class="text-small">© 2020 Instagram</div>
+    </center>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
